@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link href="styles/jovan-home.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="scripts/jovan-home.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="welcome-text">
+        <p class="welcome-text-welcome">Selamat Datang!</p>
+        <p class="welcome-text-name">Delvito Nurul Shelomo</p>
+      </div>
+      <div class="card">
+        <div class="background-decoration-wrapper">
+          <div class="background-decoration deco-1"></div>
+          <div class="background-decoration deco-2"></div>
+        </div>
+        <div class="card-content">
+          <div>
+            <p class="saldo-text">Saldo Saat Ini</p>
+            <p class="saldo-number">Rp 12.995.200</p>
+          </div>
+          <div class="rekening">
+            <p class="rekening-no" id="rekening-no">****-***-***-*237</p>
+            <img
+              class="rekening-eye"
+              id="rekening-eye"
+              src="assets/home/eye-closed.svg"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="search-container">
+        <input class="search" id="search-features" placeholder="Cari Fitur" />
+        <div class="search-results" style="display: none">
+          <div class="search-result">
+            <div class="icon-wrapper">
+              <img src="assets/home/transfer.svg" />
+            </div>
+            <p>Transfer</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-menu">
+        <button class="menu">
+          <div class="menu-icon">
+            <img src="assets/home/etc.svg" />
+          </div>
+          <p>Lainnya</p>
+        </button>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <a class="menu-item selected" href="jovan-home.html">
+        <img src="assets/menu-home.svg" />
+        <p>Home</p>
+      </a>
+      <a class="menu-item" href="aini_transfer.html">
+        <img src="assets/menu-transfer.svg"/>
+        <p>Transfer</p>
+      </a>
+      <a class="menu-item">
+        <div class="qris">
+          <img src="assets/menu-qris.svg" />
+        </div>
+        <p>QRIS</p>
+      </a>
+      <a class="menu-item" href="delvito-mutasi.html">
+        <img src="assets/menu-mutasi.svg" />
+        <p>Mutasi</p>
+      </a>
+      <a class="menu-item">
+        <img src="assets/menu-account.svg" />
+        <p>Account</p>
+      </a>
+    </div>
+  </body>
+</html>

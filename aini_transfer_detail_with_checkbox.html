@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detail Transfer</title>
+    <link href="styles/aini_transfer.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="scripts/transfer.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="welcome-text">
+        <a href="aini_transfer.html">
+          <img src="assets/arrow-back.svg" />
+        </a>
+        <p class="transfer-font">Transfer</p>
+      </div>
+      <div class="card">
+        <p class="receiver-detail-text">Rekening Tujuan</p>
+        <div class="detail-receiver-box">
+          <img class="account-icon" src="assets/baseline-account-circle-green.svg" />
+          <p class="receiver-detail-name-text"><b>New Receiver</b></p>
+          <p class="receiver-detail-bank-text">BCA : 0341-55-293758-74-37</p>
+          <div class="save-container">
+            <input class="checkbox-class" type="checkbox" id="myCheckbox" name="myCheckbox" value="true">
+            <p class="save-font">Simpan Rekening</p>
+          </div>
+        </div>
+        <div class="transfer-detail-box">
+          <p class="nominal-detail-text">Nominal Transfer</p>
+          <input class="nominal-box" placeholder="Rp. " />
+          <p class="note-detail-text">Catatan</p>
+          <input class="receiver-note-form" type="tel" pattern="[0-9]" id="rekening" name="rekening" required/>
+        </div>
+      </div>
+      <a href="aini_transfer_review_2.html">
+        <button class="next" type="submit">
+          <p class="next-font">LANJUT&nbsp;&nbsp;&nbsp;></p>
+        </button>
+      </a>
+    </div>
+  </body>
+</html>

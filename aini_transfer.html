@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transfer</title>
+    <link href="styles/aini_transfer.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="scripts/transfer.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="welcome-text">
+        <a href="jovan-home.html">
+          <img src="assets/arrow-back.svg" />
+        </a>
+        <p class="transfer-font">Transfer</p>
+      </div>
+      <div class="card">
+        <div class="data">
+          <p class="receiver-name-text">Nama Penerima</p>
+          <img class="img-style" src="assets/person.svg" />
+          <select class="receiver-name-form" name="penerima" id="penerima">
+            <option value=""></option>
+            <option value="Rekan 1">
+              Rekan 1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;BRI :
+              0111-**-******-50-7
+            </option>
+            <option value="Rekan 2">
+              Rekan 2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;BCA :
+              0341-**-******-74-3
+            </option>
+            <option value="Rekan 3">
+              Rekan 3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;BNI :
+              4782-**-******-35-6
+            </option>
+            <option value="Tambah Penerima Baru">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;- Tambah Penerima Baru
+              -&nbsp;-
+            </option>
+          </select>
+          <p class="bank-name-text">Bank Tujuan</p>
+          <img class="img-style" src="assets/bank.svg" />
+          <select class="receiver-name-form" name="bank" id="bank" disabled>
+            <option value="" selected disabled></option>
+            <option value="Bank BRI">Bank BRI</option>
+            <option value="Bank BCA">Bank BCA</option>
+            <option value="Bank Mandiri">Bank Mandiri</option>
+            <option value="Bank BTN">Bank BTN</option>
+            <option value="Bank CIMB Niaga">Bank CIMB Niaga</option>
+            <option value="Bank Danamon">Bank Danamon</option>
+            <option value="Tujuan Lain">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;- Tujuan Lain -&nbsp;-
+            </option>
+          </select>
+          <p class="bank-name-text">Nomor Rekening</p>
+          <img class="img-style" src="assets/id-card.svg" />
+          <input
+            class="receiver-name-form"
+            type="tel"
+            pattern="[0-9]"
+            id="rekening"
+            name="rekening"
+            disabled
+            required
+          />
+        </div>
+      </div>
+      <a href="aini_transfer_detail.html">
+        <button class="next" type="submit">
+          <p class="next-font">LANJUT&nbsp;&nbsp;&nbsp;></p>
+        </button>
+      </a>
+    </div>
+  </body>
+</html>

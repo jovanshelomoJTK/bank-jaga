@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- NOTE: Terdapat Fitur Pop Up pada Filter dan Sort Setting yang bisa dibuka-->
+<html>
+  <head>
+    <title>Mutasi</title>
+    <link href="styles/delvito-mutasi.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="scripts/mutasi-filtersuccess.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-text">
+        <div class="header-text-n-back">
+          <button onclick="location.href='jovan-home.html'"><img src="assets/Mutasi/back.svg" /></button>
+          <p class="header-text-title">Daftar Mutasi</p>
+        </div>
+        <p class="header-text-date">1 Januari 2023 - 31 Januari 2023</p>
+      </div>
+      <div class="search-filter">
+        <input class="search" id="search-mutasi" placeholder="Cari Mutasi" />
+        <button class="filter-button" id="filter-button" onclick="openFilter()"> <img src="assets/mutasi/filter.svg" /></button>
+        <button class="sort-button" id="sort-button" onclick="openSort()"> <img src="assets/mutasi/sort-setting.svg" /></button>
+        <button> <img src="assets/mutasi/ascending.svg" /></button>
+      </div>
+      <div class="filter-success">
+        <p>Filter berhasil diterapkan. </p>
+        <button onclick="location.href='delvito-mutasi.html'"> Reset Filter</button>
+      </div>
+      <div class="subtitle">
+        <p class="subtitle-mutasi">Mutasi</p>
+        <p class="subtitle-diperbarui">Diperbarui Hari Ini. 08.22</p>
+      </div>
+      <div class="mutasi-list">
+        <div class="mutasi-item">
+          <div class="mutasi-item-icon">
+              <img src="assets/budgeting.svg" />
+          </div>
+          <div class="mutasi-item-deskripsi">
+            <p> <span style="font-weight: 700;" class="title">Top Up Gopay</span><span class="person"> - Budi Idub</span></p>
+            <p class="date"> 30 Januari 2023 | 19:45:55 WIB</p>
+          </div>
+          <div class="mutasi-item-nominal">-Rp60.000
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <button class="menu-item" onclick="location.href='jovan-home.html'">
+        <img src="assets/menu-home.svg" />
+        <p>Home</p>
+      </button>
+      <div class="menu-item">
+        <img src="assets/menu-transfer.svg" />
+        <p>Transfer</p>
+      </div>
+      <div class="menu-item">
+        <div class="qris">
+          <img src="assets/menu-qris.svg" />
+        </div>
+        <p>QRIS</p>
+      </div>
+      <div class="menu-item ">
+        <img src="assets/menu-mutasi.svg" />
+        <p>Mutasi</p>
+      </div>
+      <div class="menu-item">
+        <img src="assets/menu-account.svg" />
+        <p>Account</p>
+      </div>
+    </div>
+
+    <!-- FILTER MODAL -->
+
+    <div class="filter" id="myModal">
+      <div class="filter-container">
+        <div class="filter-title">
+          <button onclick="location.href='delvito-mutasi.html'"><img src="assets/Mutasi/back.svg" /></button>
+          <p class="filter-title-text">Filter Mutasi</p>
+        </div>
+        <div class="filter-body">
+            <div class="rentang-waktu">
+              <div class="filter-check-subtitle">
+                <input type="checkbox" class="filter-check" id="check-rentang-waktu" name="check-rentang-waktu" value="Rentang Waktu">
+                <label class="filter-subtitle" for="check-rentang-waktu">Rentang Waktu</p>
+              </div>
+              <div class="filter-pilihan">
+                <div>
+                  <label for="7hari">7 Hari Terakhir</label>
+                  <input type="radio" id="7hari" name="rentang-waktu" value="7hari"/>
+                </div>
+                <div>
+                  <label for="bulan-ini">Bulan Ini</label>
+                  <input type="radio" id="bulan-ini" name="rentang-waktu" value="bulan-ini"/>
+                </div>
+                <div>
+                  <label for="pilih-tanggal" style="margin-bottom: 12px;">Pilih Tanggal</label>
+                  <input type="radio" id="pilih-tanggal" name="rentang-waktu" value="pilih-tanggal"/>
+                </div>
+              </div>
+              <div class="rentang">
+                <div class="card-rentang">
+                  <p class="teks-dari-hingga">Dari:</p>
+                  <input type="date"class="teks-tanggal">
+                </div>
+                <div class="card-rentang">  
+                  <p class="teks-dari-hingga">Hingga:</p>
+                  <input type="date" class="teks-tanggal">
+                </div>
+              </div>
+            </div>
+            
+            <div class="besar-transaksi">
+              <div class="filter-check-subtitle">
+                <input type="checkbox" class="filter-check" id="check-besar-transaksi" name="check-besar-transaksi" value="Besar Transaksi">
+                <label class="filter-subtitle" for="check-besar-transaksi">Besar Transaksi</p>
+              </div>
+
+              <div class="rentang">
+                <div class="card-rentang">
+                  <p class="teks-dari-hingga">Dari:</p>
+                  <div class="nominal-transaksi">
+                    <p class="teks-tanggal">Rp </p>
+                    <input class="input-transaksi" placeholder="0"/>
+                  </div>
+                </div>
+                <div class="card-rentang">  
+                  <p class="teks-dari-hingga">Hingga:</p>
+                  <div class="nominal-transaksi">
+                    <p class="teks-tanggal">Rp </p>
+                    <input class="input-transaksi" placeholder="0"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="kategori">
+              <div class="kategori-check-subtitle">
+                <input type="checkbox" class="filter-check" id="check-kategori" name="check-kategori" value="Cek Kategori">
+                <label class="filter-subtitle" for="check-kategori">Kategori</p>
+              </div>
+              <div class="pilih-kategori">
+                <p style="padding-left: 36px;">Pilih Kategori</p>
+                <img src="assets/Mutasi/arrow.svg">
+              </div>
+            </div>
+            
+            <div class="pisahkan">
+              <div class="pisahkan-check-subtitle">
+                <input type="checkbox" class="filter-check" id="check-pisahkan" name="check-pisahkan" value="Pisahkan">
+                <label class="filter-subtitle" for="check-pisahkan">Pisahkan Kredit & Debit</p>
+              </div>
+            </div>
+
+            <div class="filter-save-cancel-btn">
+              <button class="cancel" onclick="closeFilter()">
+                <p>Cancel</p>
+              </button>
+              <button class="save" onclick="closeFilter()">
+                <p>Save</p>
+              </button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- SORT SETTING MODAL -->
+    <div class="sort" id="mySortModal">
+      <div class="sort-container">
+        <div class="sort-title">
+          <button onclick="location.href='delvito-mutasi.html'"><img src="assets/Mutasi/back.svg" /></button>
+          <p class="sort-title-text">Atur Sort</p>
+        </div>
+        <div class="sort-pilihan">
+          <div>
+            <label for="berdasar-uang">Berdasarkan Uang</label>
+            <input type="radio" id="berdasar-uang" name="sort-radio" value="berdasar-uang"/>
+          </div>
+          <div>
+            <label for="berdasar-waktu">Berdasarkan Waktu</label>
+            <input type="radio" id="berdasar-waktu" name="sort-radio" value="berdasar-waktu"/>
+          </div>
+        </div>
+
+        <div class="sort-save-cancel-btn">
+          <button class="cancel" onclick="closeSort()">
+            <p>Cancel</p>
+          </button>
+          <button class="save" onclick="closeSort()">
+            <p>Save</p>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

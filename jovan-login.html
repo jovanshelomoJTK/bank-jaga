@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log In</title>
+    <link href="styles/jovan-login.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="scripts/jovan-login.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="background-decoration-wrapper">
+      <div class="background-decoration deco-1"></div>
+      <div class="background-decoration deco-2"></div>
+    </div>
+    <div class="container">
+      <img class="logo" src="assets/logo.svg" />
+      <p class="text-pin">Masukkan PIN</p>
+      <div class="pin-bullets">
+        <div class="pin-bullet"></div>
+        <div class="pin-bullet"></div>
+        <div class="pin-bullet"></div>
+        <div class="pin-bullet"></div>
+        <div class="pin-bullet"></div>
+        <div class="pin-bullet"></div>
+      </div>
+      <div class="warning-wrapper" style="visibility: hidden">
+        <img src="assets/login/warning.svg" />
+        <div class="warning-text-wrapper">
+          <p class="warning-text">
+            <span class="wrong-password-remaining">5 kali</span> percobaan lagi
+            sebelum akun kamu terblokir.
+          </p>
+          <p class="warning-button" onclick="togglePopup('popup-warning',true)">
+            Apa yang terjadi jika akun saya terblokir?
+          </p>
+        </div>
+      </div>
+      <div class="pin-grid">
+        <button class="button-pin secondary-bg" data-pin="1">1</button>
+        <button class="button-pin secondary-bg" data-pin="2">2</button>
+        <button class="button-pin secondary-bg" data-pin="3">3</button>
+        <button class="button-pin secondary-bg" data-pin="4">4</button>
+        <button class="button-pin secondary-bg" data-pin="5">5</button>
+        <button class="button-pin secondary-bg" data-pin="6">6</button>
+        <button class="button-pin secondary-bg" data-pin="7">7</button>
+        <button class="button-pin secondary-bg" data-pin="8">8</button>
+        <button class="button-pin secondary-bg" data-pin="9">9</button>
+        <button class="button-pin no-bg" data-pin="fingerprint">
+          <img
+            src="assets/login/fingerprint.svg"
+            style="pointer-events: none"
+          />
+        </button>
+        <button class="button-pin secondary-bg" data-pin="0">0</button>
+        <button class="button-pin no-bg" data-pin="backspace">
+          <img src="assets/login/backspace.svg" style="pointer-events: none" />
+        </button>
+      </div>
+    </div>
+
+    <div class="popup-wrapper" style="display: none">
+      <div class="popup popup-warning" style="display: none">
+        <img src="assets/login/warning.svg" width="80px" />
+        <strong style="text-align: center"
+          >Apa yang terjadi jika akun saya terblokir?</strong
+        >
+        <p style="text-align: center">
+          Akun kamu akan terkunci dan tidak dapat digunakan selama 1 jam. Tapi
+          tenang saja, setelah 1 jam kamu dapat mencoba login kembali
+        </p>
+        <button
+          class="button-primary width-100"
+          onclick="togglePopup('popup-warning',false)"
+        >
+          Saya Mengerti
+        </button>
+      </div>
+      <div class="popup popup-fingerprint" style="display: none">
+        <img
+          src="assets/login/fingerprint-green.svg"
+          width="80px"
+          onclick="successLogin()"
+        />
+        <strong style="text-align: center">Gunakan Fingerprint</strong>
+        <p style="text-align: center">
+          Letakkan jari kamu pada sensor fingerprint untuk masuk ke akun kamu
+        </p>
+      </div>
+    </div>
+    <p class="lupa-pin">Lupa Pin?</p>
+  </body>
+</html>
