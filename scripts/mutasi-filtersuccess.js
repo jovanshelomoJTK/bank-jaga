@@ -13,7 +13,7 @@
 */
 
 //FILTER
-function openFilter(){
+function openFilter() {
   let modal = document.getElementById("myModal");
   let overlay = document.getElementById("overlay");
 
@@ -21,7 +21,7 @@ function openFilter(){
   overlay.style.opacity = 1;
 }
 
-function closeFilter(){
+function closeFilter() {
   let modal = document.getElementById("myModal");
   let overlay = document.getElementById("overlay");
 
@@ -30,7 +30,7 @@ function closeFilter(){
 }
 
 //SORT
-function openSort(){
+function openSort() {
   let modal = document.getElementById("mySortModal");
   let overlay = document.getElementById("overlay");
 
@@ -38,7 +38,7 @@ function openSort(){
   overlay.style.opacity = 1;
 }
 
-function closeSort(){
+function closeSort() {
   let modal = document.getElementById("mySortModal");
   let overlay = document.getElementById("overlay");
 
@@ -53,7 +53,7 @@ let mutations = [
     person: "Muhammad Fulan",
     date: "30 Januari 2023 | 16:05:55 WIB",
     total: 250000,
-    isPengeluaran: false
+    isPengeluaran: false,
   },
   {
     icon: "trf-in.svg",
@@ -61,7 +61,7 @@ let mutations = [
     person: "Agus Suga",
     date: "15 Januari 2023 | 23:45:55 WIB",
     total: 55000,
-    isPengeluaran: false
+    isPengeluaran: false,
   },
   {
     icon: "topup.svg",
@@ -69,7 +69,7 @@ let mutations = [
     person: "Budi Idub",
     date: "30 Januari 2023 | 19:45:55 WIB",
     total: 60000,
-    isPengeluaran: true
+    isPengeluaran: true,
   },
   {
     icon: "belanja.svg",
@@ -77,7 +77,7 @@ let mutations = [
     person: "Shopee",
     date: "29 Januari 2023 | 12:02:05 WIB",
     total: 1000000,
-    isPengeluaran: true
+    isPengeluaran: true,
   },
   {
     icon: "trf-out.svg",
@@ -85,7 +85,7 @@ let mutations = [
     person: "Maemunah",
     date: "26 Januari 2023 | 06:59:55 WIB",
     total: 150000,
-    isPengeluaran: true
+    isPengeluaran: true,
   },
   {
     icon: "QRIS.svg",
@@ -93,7 +93,7 @@ let mutations = [
     person: "Kantin Jujur JTK",
     date: "22 Januari 2023 | 08:45:55 WIB",
     total: 5000,
-    isPengeluaran: true
+    isPengeluaran: true,
   },
   {
     icon: "pulsa.svg",
@@ -101,7 +101,7 @@ let mutations = [
     person: "XL Axiata",
     date: "14 Januari 2023 | 15:25:55 WIB",
     total: 26500,
-    isPengeluaran: true
+    isPengeluaran: true,
   },
   {
     icon: "listrik.svg",
@@ -109,7 +109,7 @@ let mutations = [
     person: "",
     date: "13 Januari 2023 | 18:15:55 WIB",
     total: 100000,
-    isPengeluaran: true
+    isPengeluaran: true,
   },
   {
     icon: "tarik-tunai.svg",
@@ -117,48 +117,59 @@ let mutations = [
     person: "",
     date: "12 Januari 2023 | 17:45:55 WIB",
     total: 500000,
-    isPengeluaran: true
+    isPengeluaran: true,
   },
-]
+];
 
-const loadMutation = (mutations)=>{
+const loadMutation = (mutations) => {
   list.innerHTML = "";
-  mutations.map((mutation)=>{
+  mutations.map((mutation) => {
     let cloned = template.cloneNode(true);
     let icon = cloned.getElementsByClassName("mutasi-item-icon")[0];
     let title = cloned.getElementsByClassName("title")[0];
     let person = cloned.getElementsByClassName("person")[0];
     let date = cloned.getElementsByClassName("date")[0];
     let nominal = cloned.getElementsByClassName("mutasi-item-nominal")[0];
-    
-    icon.classList.add(mutation.isPengeluaran?"pengeluaran":"pemasukan");
-    icon.children[0].src = "assets/mutasi/"+mutation.icon;
-    
-    title.innerText = mutation.title;
-    
-    person.innerText= mutation.person? " - " + mutation.person : mutation.person;
-    
-    date.innerText = mutation.date;
-    
-    nominal.classList.add(mutation.isPengeluaran?"pengeluaran":"pemasukan");
-    nominal.innerText = (mutation.isPengeluaran?"-":"+") + "Rp"+mutation.total.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
-    
-    list.appendChild(cloned);
-    
-    cloned.setAttribute("onclick", "location.href='delvito-rincian-mutasi.html'")
-    
-  })
-}
 
-document.getElementById("search-mutasi").addEventListener("input",(e)=>{
+    icon.classList.add(mutation.isPengeluaran ? "pengeluaran" : "pemasukan");
+    icon.children[0].src = "assets/Mutasi/" + mutation.icon;
+
+    title.innerText = mutation.title;
+
+    person.innerText = mutation.person
+      ? " - " + mutation.person
+      : mutation.person;
+
+    date.innerText = mutation.date;
+
+    nominal.classList.add(mutation.isPengeluaran ? "pengeluaran" : "pemasukan");
+    nominal.innerText =
+      (mutation.isPengeluaran ? "-" : "+") +
+      "Rp" +
+      mutation.total.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+
+    list.appendChild(cloned);
+
+    cloned.setAttribute(
+      "onclick",
+      "location.href='delvito-rincian-mutasi.html'"
+    );
+  });
+};
+
+document.getElementById("search-mutasi").addEventListener("input", (e) => {
   let value = e.target.value.toLowerCase();
-  loadMutation(mutations.filter(mutation=>
-   mutation.title.toLowerCase().includes(value) || mutation.date.toLowerCase().includes(value) || mutation.person.toLowerCase().includes(value) || mutation.total.toString().startsWith(value)
-  ))
-})
+  loadMutation(
+    mutations.filter(
+      (mutation) =>
+        mutation.title.toLowerCase().includes(value) ||
+        mutation.date.toLowerCase().includes(value) ||
+        mutation.person.toLowerCase().includes(value) ||
+        mutation.total.toString().startsWith(value)
+    )
+  );
+});
 let template = document.getElementsByClassName("mutasi-item")[0];
 let list = document.getElementsByClassName("mutasi-list")[0];
 list.innerHTML = "";
-loadMutation(mutations)
-
-
+loadMutation(mutations);
